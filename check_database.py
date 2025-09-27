@@ -61,7 +61,7 @@ def main():
     db_files = find_database_files()
     
     if not db_files:
-        print("❌ No .db files found in current directory or subdirectories")
+        print(" No .db files found in current directory or subdirectories")
         print("\nTo create a new database, run:")
         print("  python main.py --setup --floats 20 --days 180")
         return
@@ -71,27 +71,27 @@ def main():
     argo_databases = []
     
     for db_file in db_files:
-        print(f"\n📁 {db_file}")
+        print(f"\n {db_file}")
         is_argo, message = check_database_content(db_file)
         
         if is_argo:
-            print(f"✅ {message}")
+            print(f" {message}")
             argo_databases.append(db_file)
         else:
-            print(f"❌ {message}")
+            print(f" {message}")
     
     if argo_databases:
-        print(f"\n🎉 Found {len(argo_databases)} ARGO database(s):")
+        print(f"\n Found {len(argo_databases)} ARGO database(s):")
         for db in argo_databases:
             print(f"  - {db}")
         
-        print("\n✅ Your database is ready!")
+        print("\n Your database is ready!")
         print("You can now start the backend with:")
         print("  python main.py --backend")
         print("  or")
         print("  python start_backend.py")
     else:
-        print("\n❌ No ARGO databases found")
+        print("\n No ARGO databases found")
         print("To create a new database, run:")
         print("  python main.py --setup --floats 20 --days 180")
 

@@ -63,7 +63,7 @@ def setup_groq_api_key():
     with open(env_file, 'w') as f:
         f.writelines(env_content)
     
-    print(f"✅ API key saved to {env_file}")
+    print(f" API key saved to {env_file}")
     
     # Set environment variable for current session
     os.environ["GROQ_API_KEY"] = api_key

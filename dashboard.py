@@ -243,7 +243,7 @@ def main():
     
     # Interactive Map Page
     elif page == "Interactive Map":
-        st.header("🗺️ Interactive Map")
+        st.header(" Interactive Map")
         
         # Get float data
         float_data = db.query_floats()
@@ -277,7 +277,7 @@ def main():
     
     # Profile Analysis Page
     elif page == "Profile Analysis":
-        st.header("📈 Profile Analysis")
+        st.header(" Profile Analysis")
         
         # Get profile data
         profile_data = db.query_profiles()
@@ -341,7 +341,7 @@ def main():
     
     # AI Chat Assistant Page
     elif page == "AI Chat Assistant":
-        st.header("🤖 AI Chat Assistant")
+        st.header(" AI Chat Assistant")
         
         # Initialize chat history
         if "chat_history" not in st.session_state:
@@ -389,7 +389,7 @@ def main():
     
     # Data Export Page
     elif page == "Data Export":
-        st.header("📤 Data Export")
+        st.header(" Data Export")
         
         # Export controls
         col1, col2 = st.columns([1, 1])

@@ -17,7 +17,7 @@ def print_banner():
 
 def check_dependencies():
     """Check if all required dependencies are installed."""
-    print("🔍 Checking dependencies...")
+    print(" Checking dependencies...")
     
     required_packages = [
         'fastapi', 'uvicorn', 'streamlit', 'pandas', 'numpy', 
@@ -167,7 +167,7 @@ def demo_fastapi():
             import subprocess
             subprocess.run([sys.executable, "start_backend.py"], check=True)
         except KeyboardInterrupt:
-            print("\n👋 FastAPI backend stopped.")
+            print("\n FastAPI backend stopped.")
         except Exception as e:
             print(f"Error starting FastAPI: {e}")
 
