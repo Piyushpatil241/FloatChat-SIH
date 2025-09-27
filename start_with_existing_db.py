@@ -29,7 +29,7 @@ def update_database_config(db_path):
     config_file = "config.py"
     
     if not os.path.exists(config_file):
-        print("❌ config.py not found")
+        print(" config.py not found")
         return False
     
     # Read current config
@@ -47,10 +47,10 @@ def update_database_config(db_path):
         with open(config_file, 'w') as f:
             f.write(new_content)
         
-        print(f"✅ Updated config.py to use database: {db_path}")
+        print(f" Updated config.py to use database: {db_path}")
         return True
     else:
-        print("❌ Could not update config.py")
+        print(" Could not update config.py")
         return False
 
 def main():
@@ -58,26 +58,26 @@ def main():
     print("=" * 45)
     
     # Find existing database
-    print("🔍 Looking for existing database...")
+    print(" Looking for existing database...")
     db_path = find_existing_database()
     
     if not db_path:
-        print("❌ No existing database found")
+        print(" No existing database found")
         print("\nTo create a new database, run:")
         print("  python main.py --setup --floats 20 --days 180")
         print("\nOr to check for databases in other locations:")
         print("  python main.py --check-db")
         return
     
-    print(f"✅ Found existing database: {db_path}")
+    print(f" Found existing database: {db_path}")
     
     # Update config if needed
     if not db_path.endswith("argo_data.db"):
         print("📝 Updating configuration...")
         if not update_database_config(db_path):
-            print("⚠️  Could not update config, but database should still work")
+            print("  Could not update config, but database should still work")
     
-    print("\n🚀 Starting FastAPI backend...")
+    print("\n Starting FastAPI backend...")
     print("   Frontend: http://localhost:8000")
     print("   API Docs: http://localhost:8000/docs")
     print("   Press Ctrl+C to stop")
@@ -87,9 +87,9 @@ def main():
         import subprocess
         subprocess.run([sys.executable, "start_backend.py"], check=True)
     except KeyboardInterrupt:
-        print("\n👋 Backend stopped.")
+        print("\n Backend stopped.")
     except Exception as e:
-        print(f"❌ Error starting backend: {e}")
+        print(f" Error starting backend: {e}")
 
 if __name__ == "__main__":
     main()
